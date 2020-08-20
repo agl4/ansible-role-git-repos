@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Attila GOLONCSER
+  description: Role for installing and setting up git on a desktop.
+
+  license: BSD License
+
+  min_ansible_version: 2.8
+
+  platforms:
+    - name: macOS
+      versions:
+        - 10.14
+    - name: Ubuntu
+      versions:
+        - 20.04
+        - 20.10
+    - name: Fedora
+      versions:
+        - 32
+        - 33
+
+dependencies: []

@@ -1,0 +1,20 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    git_repos:
+      - url: https://github.com/agoloncser/ansible-role-desktop-git.git
+        path: ~/src/github.com/agoloncser/ansible-role-desktop-git.git
+        version: master
+        push_enabled: False
+        pull_enabled: True
+        config:
+          - name: user.name
+            value: Attila GOLONCSER123
+          - name: user.email
+            value: agoloncser123@example.com
+        fetch_enabled: True
+        clone_enabled: True
+
+  roles:
+    - ansible-role-git-repos

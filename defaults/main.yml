@@ -1,0 +1,4 @@
+---
+git_repos: []
+git_fetch_args: "--all --prune"
+git_push_args: ""
