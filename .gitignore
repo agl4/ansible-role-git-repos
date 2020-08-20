@@ -6,4 +6,4 @@
 /facts/
 /ansible.cfg
 ansible-roles
-.ansible-roles
+/.ansible-roles/
