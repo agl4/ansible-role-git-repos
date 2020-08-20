@@ -4,7 +4,7 @@
   vars:
     git_repos:
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
-        path: ~/src/github.com/agoloncser/ansible-role-git-repos.git
+        path: ~/src/github.com/agoloncser/set-options.git
         version: master
         push_enabled: False
         pull_enabled: True
@@ -15,6 +15,8 @@
             value: agoloncser123@example.com
         fetch_enabled: True
         clone_enabled: True
+      - url: https://github.com/agoloncser/ansible-role-git-repos.git
+        path: ~/src/github.com/use-defaults.git
 
   roles:
     - ansible-role-git-repos
