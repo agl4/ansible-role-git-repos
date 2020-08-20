@@ -1,25 +1,26 @@
-# Desktop git role
+# Git-repos
 
-An Ansible role to checkout out git repos on your desktop. It also has options for global and repository-level configurations. Also supports pushing repos.
+Ansible role to checkout out and setting up git repositories on your system.
 
 ## Requirements
 
-Git should be installed on the system.
+See dependencies.
 
 ## Role Variables
 
-This is a sample variable structure used by this role.
+This is a sample variable structure used by this role:
 
     git_repos:
-      - url: https://github.com/agoloncser/ansible-role-desktop-git.git
-        path: ~/src/github.com/agoloncser/ansible-role-desktop-git.git
-        user_name: Attila GOLONCSER123
-        user_email: agoloncser123@example.com
-        # these are defaults:
+      - url: https://github.com/agoloncser/ansible-role-git-repos.git
+        path: ~/src/github.com/agoloncser/ansible-role-git-repos.git
         version: master
-        enabled: True
         push_enabled: False
         pull_enabled: True
+        config:
+          - name: user.name
+            value: Attila GOLONCSER123
+          - name: user.email
+            value: agoloncser123@example.com
         fetch_enabled: True
         clone_enabled: True
 
@@ -31,13 +32,9 @@ The URL of the remote repository.
 
 The local path where to check out the repository.
 
-### `git_repos.item.user_name`
+### `git_repos.item.config`
 
-The git `user_name` to set on the repo if it differs from `git_global_user_name`.
-
-### `git_repos.item.user_email`
-
-The git `user_email` to set on the repo if it differs from `git_global_user_email`.
+A dictionary of `name` and `value` pairs for configuring the repository locally with `git config`. Useful for setting up `user.name` and `user.email` for example. Optional.
 
 ### `git_repos.item.version`
 
@@ -45,7 +42,7 @@ The git version of the repository to check out. Can be a branch, a tag, commit i
 
 ### `git_repos.item.enabled`
 
-If set to `False` the operations on this `item` will be skipped. There repository will not be deleted. Default: `True`.
+If set to `False` the operations on this `item` will be skipped. The repositories will **never** be deleted by this role, if set to `False` it will just skip doing any action on it. Default: `True`.
 
 ### `git_repos.item.push_enabled`
 
@@ -65,19 +62,40 @@ The role is enabled to clone this repo from `origin`. Default: `True`.
 
 ## Dependencies
 
-None. However git should be installed on the system. See https://github.com/agoloncser/ansible-role-git for a role that takes care of this.
+The role `agoloncser.git` is set as dependency for installing git in your environment, which is not done in this role for being able to run it at any time without escalated privileges.
 
 ## Example Playbook
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: localhost
       vars:
         git_repos:
-          - url: https://github.com/agoloncser/ansible-role-desktop-git.git
-            path: ~/src/github.com/agoloncser/ansible-role-desktop-git.git
+          - url: https://github.com/agoloncser/ansible-role-git.git
+            path: ~/src/github.com/agoloncser/ansible-role-git.git
       roles:
          - agoloncser.git_repos
+
+## Tips
+
+Since the configuration dictionary looks a little overwhelming at first, it needs a little explanation. If you want to set some keys other that the defaults on all of your repositories, use YAML references inside your inventory. This solution totally works:
+
+        common_settings: &common_settings
+          push_enabled: False
+          pull_enabled: True
+          config:
+            - name: user.name
+              value: Attila GOLONCSER123
+            - name: user.email
+              value: agoloncser123@example.com
+          fetch_enabled: True
+          clone_enabled: True
+
+        git_repos:
+          - url: https://github.com/megacorp/my-repo-1.git
+            path: ~/src/github.com/megacorp/my-repo-1.git
+            <<: *common_settings
+          - url: https://github.com/megacorp/my-repo-2.git
+            path: ~/src/github.com/megacorp/my-repo-2.git
+            <<: *common_settings
 
 ## License
 
@@ -85,4 +103,4 @@ BSD
 
 ## Author Information
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+https://github.com/agoloncser
