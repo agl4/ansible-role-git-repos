@@ -6,7 +6,7 @@ driver:
 lint: |
   set -e
   yamllint .
-  prettier --check "**/*.yml" "**/*.yaml"
+  prettier --check --parser yaml "**/*.yml"
   ansible-lint
 platforms:
   - name: instance
