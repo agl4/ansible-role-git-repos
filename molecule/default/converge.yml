@@ -3,8 +3,8 @@
   hosts: all
   vars:
     git_repos:
-      - url: https://github.com/agoloncser/ansible-role-desktop-git.git
-        path: ~/src/github.com/agoloncser/ansible-role-desktop-git.git
+      - url: https://github.com/agoloncser/ansible-role-git-repos.git
+        path: ~/src/github.com/agoloncser/ansible-role-git-repos.git
         version: master
         push_enabled: False
         pull_enabled: True
