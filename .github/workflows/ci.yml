@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: "${{ github.repository }}"
+          path: agoloncser.git_repos
 
       - name: Set up Python ${{ matrix.python_version }}
         uses: actions/setup-python@v1
@@ -46,7 +46,7 @@ jobs:
 
       - name: Molecule test
         run: molecule test
-        working-directory: "${{ github.repository }}"
+        working-directory: agoloncser.git_repos
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
 
