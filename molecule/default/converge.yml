@@ -17,6 +17,5 @@
         clone_enabled: True
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/use-defaults.git
-
   roles:
-    - ansible-role-git-repos
+    - git_repos
