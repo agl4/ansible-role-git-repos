@@ -36,9 +36,7 @@ jobs:
           python-version: ${{ matrix.python_version }}
 
       - name: Install dependencies
-        run: |
-          pip install ansible molecule yamllint docker ansible-lint
-          ansible-lint --version
+        run: pip install ansible molecule yamllint docker ansible-lint
 
       - name: Use Node.js
         uses: actions/setup-node@v1
