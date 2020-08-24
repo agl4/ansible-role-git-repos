@@ -45,7 +45,9 @@ jobs:
         run: npm install --global prettier
 
       - name: Molecule test
-        run: molecule test
+        run: |
+          pwd
+          molecule test
         working-directory: agoloncser.git_repos
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
