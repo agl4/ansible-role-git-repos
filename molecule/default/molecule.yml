@@ -9,7 +9,6 @@ lint: |
   set -e
   yamllint .
   prettier --check --parser yaml "**/*.yml"
-  ansible-lint --version
   ansible-lint
 platforms:
   - name: instance

@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: agoloncser.git_repos
+          path: git_repos
 
       - name: Set up Python ${{ matrix.python_version }}
         uses: actions/setup-python@v1
@@ -45,11 +45,8 @@ jobs:
         run: npm install --global prettier
 
       - name: Molecule test
-        run: |
-          pwd
-          ansible-lint --version
-          molecule test
-        working-directory: agoloncser.git_repos
+        run: molecule test
+        working-directory: git_repos
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
 
