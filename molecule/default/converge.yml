@@ -18,4 +18,4 @@
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/use-defaults.git
   roles:
-    - git_repos
+    - ansible-role-git-repos
