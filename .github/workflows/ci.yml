@@ -5,30 +5,33 @@ on:
   pull_request: {}
   schedule:
     - cron: "12 6 * * *"
-
 jobs:
   molecule:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
     strategy:
       fail-fast: false
       matrix:
-        python_version: ["3.7"]
+        python_version: ["3.8"]
+        experimental: [false]
         molecule_image:
           - agoloncser/docker-ansible-fedora31:latest
           - agoloncser/docker-ansible-fedora32:latest
-          - agoloncser/docker-ansible-ubuntu2010:latest
+          - agoloncser/docker-ansible-ubuntu1804:latest
           - agoloncser/docker-ansible-ubuntu2004:latest
-          - ubuntu:latest
-          - ubuntu:18.04
-          - fedora:rawhide
-          - fedora:33
-          - debian:10
+        include:
+          - python_version: "3.8"
+            molecule_image: agoloncser/docker-ansible-fedora33:latest
+            experimental: true
+          - python_version: "3.8"
+            molecule_image: agoloncser/docker-ansible-ubuntu2010:latest
+            experimental: true
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: git_repos
+          path: "${{ github.repository }}"
 
       - name: Set up Python ${{ matrix.python_version }}
         uses: actions/setup-python@v1
@@ -46,7 +49,7 @@ jobs:
 
       - name: Molecule test
         run: molecule test
-        working-directory: git_repos
+        working-directory: "${{ github.repository }}"
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
 
