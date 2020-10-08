@@ -17,10 +17,15 @@ galaxy_info:
         - bionic
     - name: Debian
       versions:
+        - bullseye
         - buster
     - name: Fedora
       versions:
         - 32
         - 31
+    - name: CentOS
+      versions:
+        - 8
+        - 7
 dependencies:
   - agoloncser.git
