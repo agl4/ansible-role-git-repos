@@ -15,7 +15,6 @@ jobs:
         python_version: ["3.8"]
         experimental: [false]
         molecule_image:
-          - agoloncser/docker-ansible-centos7
           - agoloncser/docker-ansible-centos8
           - agoloncser/docker-ansible-debian10
           - agoloncser/docker-ansible-debian11
@@ -26,6 +25,9 @@ jobs:
           - agoloncser/docker-ansible-ubuntu2004
           - agoloncser/docker-ansible-ubuntu2010
         include:
+          - python_version: "3.8"
+            molecule_image: agoloncser/docker-ansible-centos7
+            experimental: true
           - python_version: "3.8"
             molecule_image: agoloncser/docker-ansible-fedora34
             experimental: true
