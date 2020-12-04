@@ -8,24 +8,18 @@ galaxy_info:
   platforms:
     - name: MacOSX
       versions:
-        - 10.15
-        - 10.14
-        - 10.13
+        - all
     - name: Ubuntu
       versions:
-        - focal
-        - bionic
+        - all
     - name: Debian
       versions:
-        - bullseye
-        - buster
+        - all
     - name: Fedora
       versions:
-        - 32
-        - 31
-    - name: EL
+        - all
+    - name: CentOS
       versions:
-        - 8
-        - 7
+        - all
 dependencies:
   - agoloncser.git
