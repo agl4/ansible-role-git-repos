@@ -70,4 +70,6 @@
     state: "{{ item.1.state | default('present') }}"
     name: "{{ item.1.name }}"
     value: "{{ item.1.value }}"
+  when: >-
+    item.0.enabled | default(true) | bool is sameas true
   loop: "{{ lookup('subelements', git_repos, 'config', { 'skip_missing': True }, wantlist=True) }}"
