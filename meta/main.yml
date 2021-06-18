@@ -2,9 +2,9 @@
 galaxy_info:
   role_name: git_repos
   description: Role for setting up git repositories.
-  author: Attila GOLONCSER
+  author: agoloncser
   license: BSD License
-  min_ansible_version: 2.8
+  min_ansible_version: 2.9
   platforms:
     - name: MacOSX
       versions:
