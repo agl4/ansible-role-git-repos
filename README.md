@@ -14,15 +14,15 @@ This is a sample variable structure used by this role:
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/agoloncser/ansible-role-git-repos.git
         version: master
-        push_enabled: False
-        pull_enabled: True
+        push_enabled: false
+        pull_enabled: true
         config:
           - name: user.name
             value: Attila GOLONCSER123
           - name: user.email
             value: agoloncser123@example.com
-        fetch_enabled: True
-        clone_enabled: True
+        fetch_enabled: true
+        clone_enabled: true
 
 ### `git_repos.item.url`
 
@@ -42,23 +42,23 @@ The git version of the repository to check out. Can be a branch, a tag, commit i
 
 ### `git_repos.item.enabled`
 
-If set to `False` the operations on this `item` will be skipped. The repositories will **never** be deleted by this role, if set to `False` it will just skip doing any action on it. Default: `True`.
+If set to `false` the operations on this `item` will be skipped. The repositories will **never** be deleted by this role, if set to `false` it will just skip doing any action on it. Default: `true`.
 
 ### `git_repos.item.push_enabled`
 
-The role is enabled to push this repo back to `origin`. Default: `False`.
+The role is enabled to push this repo back to `origin`. Default: `false`.
 
 ### `git_repos.item.pull_enabled`
 
-The role is enabled to pull this repo from `origin`. Default: `True`.
+The role is enabled to pull this repo from `origin`. Default: `true`.
 
 ### `git_repos.item.fetch_enabled`
 
-The role is enabled to fetch this repo from `origin`. Default: `True`.
+The role is enabled to fetch this repo from `origin`. Default: `true`.
 
 ### `git_repos.item.clone_enabled`
 
-The role is enabled to clone this repo from `origin`. Default: `True`.
+The role is enabled to clone this repo from `origin`. Default: `true`.
 
 ## Dependencies
 
@@ -79,15 +79,15 @@ The role `agoloncser.git` is set as dependency for installing git in your enviro
 Since the configuration dictionary looks a little overwhelming at first, it needs a little explanation. If you want to set some keys other that the defaults on all of your repositories, use YAML references inside your inventory. This solution totally works:
 
         common_settings: &common_settings
-          push_enabled: False
-          pull_enabled: True
+          push_enabled: false
+          pull_enabled: true
           config:
             - name: user.name
               value: Attila GOLONCSER123
             - name: user.email
               value: agoloncser123@example.com
-          fetch_enabled: True
-          clone_enabled: True
+          fetch_enabled: true
+          clone_enabled: true
 
         git_repos:
           - url: https://github.com/megacorp/my-repo-1.git

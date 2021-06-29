@@ -6,15 +6,15 @@
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/agoloncser/set-options.git
         version: master
-        push_enabled: False
-        pull_enabled: True
+        push_enabled: false
+        pull_enabled: true
         config:
           - name: user.name
             value: Attila GOLONCSER123
           - name: user.email
             value: agoloncser123@example.com
-        fetch_enabled: True
-        clone_enabled: True
+        fetch_enabled: true
+        clone_enabled: true
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/use-defaults.git
   roles:
