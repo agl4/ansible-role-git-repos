@@ -1,5 +1,9 @@
 # Git-repos
 
+[![Generate tag](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/bump.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/bump.yml)
+[![Lint Code Base](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/linter.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/linter.yml)
+[![Molecule testing](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/ci.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/ci.yml)
+
 Ansible role to checkout out and setting up git repositories on your system.
 
 ## Requirements
@@ -16,13 +20,12 @@ This is a sample variable structure used by this role:
         version: master
         push_enabled: false
         pull_enabled: true
+        fetch_enabled: true
         config:
           - name: user.name
             value: Attila GOLONCSER123
           - name: user.email
             value: agoloncser123@example.com
-        fetch_enabled: true
-        clone_enabled: true
 
 ### `git_repos.item.url`
 
@@ -40,25 +43,17 @@ A dictionary of `name` and `value` pairs for configuring the repository locally 
 
 The git version of the repository to check out. Can be a branch, a tag, commit id. Default: `master`.
 
-### `git_repos.item.enabled`
-
-If set to `false` the operations on this `item` will be skipped. The repositories will **never** be deleted by this role, if set to `false` it will just skip doing any action on it. Default: `true`.
-
 ### `git_repos.item.push_enabled`
 
-The role is enabled to push this repo back to `origin`. Default: `false`.
+The role is enabled to push this repo back to `origin`.
 
 ### `git_repos.item.pull_enabled`
 
-The role is enabled to pull this repo from `origin`. Default: `true`.
+The role is enabled to pull this repo from `origin`.
 
 ### `git_repos.item.fetch_enabled`
 
-The role is enabled to fetch this repo from `origin`. Default: `true`.
-
-### `git_repos.item.clone_enabled`
-
-The role is enabled to clone this repo from `origin`. Default: `true`.
+The role is enabled to fetch this repo from `origin`.
 
 ## Dependencies
 
@@ -71,6 +66,9 @@ The role `agoloncser.git` is set as dependency for installing git in your enviro
         git_repos:
           - url: https://github.com/agoloncser/ansible-role-git.git
             path: ~/src/github.com/agoloncser/ansible-role-git.git
+            push_enabled: false
+            pull_enabled: true
+            fetch_enabled: true
       roles:
          - agoloncser.git_repos
 
@@ -81,13 +79,12 @@ Since the configuration dictionary looks a little overwhelming at first, it need
         common_settings: &common_settings
           push_enabled: false
           pull_enabled: true
+          fetch_enabled: true
           config:
             - name: user.name
               value: Attila GOLONCSER123
             - name: user.email
               value: agoloncser123@example.com
-          fetch_enabled: true
-          clone_enabled: true
 
         git_repos:
           - url: https://github.com/megacorp/my-repo-1.git
@@ -96,6 +93,14 @@ Since the configuration dictionary looks a little overwhelming at first, it need
           - url: https://github.com/megacorp/my-repo-2.git
             path: ~/src/github.com/megacorp/my-repo-2.git
             <<: *common_settings
+            
+## Breaking changes
+
+### v2.0.x
+
+- removal of `enabled` key
+- removal of `clone_enabled` key
+- setting value is mandatory on `push_enabled`, `pull_enabled` and `fetch_enabled` keys
 
 ## License
 
