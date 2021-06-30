@@ -8,14 +8,16 @@
         version: master
         push_enabled: false
         pull_enabled: true
+        fetch_enabled: true
         config:
           - name: user.name
             value: Attila GOLONCSER123
           - name: user.email
             value: agoloncser123@example.com
-        fetch_enabled: true
-        clone_enabled: true
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/use-defaults.git
+        push_enabled: false
+        pull_enabled: true
+        fetch_enabled: true
   roles:
     - agoloncser.git_repos

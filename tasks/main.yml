@@ -6,20 +6,14 @@
     accept_hostkey: true
     version: "{{ item.version | default('master') }}"
     update: "no"
-    track_submodules: "{{ item.track_submodules | default('yes') }}"
-  when: >-
-    item.enabled | default(true) | bool is sameas true and item.clone_enabled |
-    default(true) | bool is sameas true
+    track_submodules: "{{ item.track_submodules | default(true) }}"
   with_items: "{{ git_repos }}"
 
 - name: fetch repos
   shell: "git fetch {{ item.fetch_args | default(git_fetch_args) }}"
   args:
     chdir: "{{ item.path }}"
-  when: >-
-    item.enabled | default(true) | bool is sameas true and item.fetch_enabled |
-    default(true) | bool is sameas true
-  with_items: "{{ git_repos }}"
+  with_items: "{{ git_repos | selectattr('fetch_enabled') }}"
   changed_when: false
   tags:
     - skip_ansible_lint
@@ -30,10 +24,7 @@
     chdir: "{{ item.path }}"
   register: gitpull
   changed_when: "'Already up to date' not in gitpull.stdout"
-  when: >-
-    item.enabled | default(true) | bool is sameas true and item.pull_enabled |
-    default(true) | bool is sameas true
-  with_items: "{{ git_repos }}"
+  with_items: "{{ git_repos | selectattr('pull_enabled') }}"
   tags:
     - skip_ansible_lint
 
@@ -43,10 +34,7 @@
     chdir: "{{ item.path }}"
   register: gitpush
   changed_when: "'Everything up-to-date' not in gitpush.stderr"
-  when: >-
-    item.enabled | default(true) | bool is sameas true and item.push_enabled |
-    default(false) | bool is sameas true
-  with_items: "{{ git_repos }}"
+  with_items: "{{ git_repos | selectattr('push_enabled') }}"
   tags:
     - skip_ansible_lint
 
@@ -56,10 +44,7 @@
     chdir: "{{ item.path }}"
   register: gitpush_tags
   changed_when: "'Everything up-to-date' not in gitpush_tags.stderr"
-  when: >-
-    item.enabled | default(true) | bool is sameas true and item.push_enabled |
-    default(false) | bool is sameas true
-  with_items: "{{ git_repos }}"
+  with_items: "{{ git_repos | selectattr('push_enabled') }}"
   tags:
     - skip_ansible_lint
 
@@ -70,6 +55,4 @@
     state: "{{ item.1.state | default('present') }}"
     name: "{{ item.1.name }}"
     value: "{{ item.1.value }}"
-  when: >-
-    item.0.enabled | default(true) | bool is sameas true
   loop: "{{ lookup('subelements', git_repos, 'config', { 'skip_missing': true }, wantlist=true) }}"
