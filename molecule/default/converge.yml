@@ -9,6 +9,7 @@
         push_enabled: false
         pull_enabled: true
         fetch_enabled: true
+        push_tags_enabled: true
         config:
           - name: user.name
             value: Attila GOLONCSER123
@@ -19,5 +20,6 @@
         push_enabled: false
         pull_enabled: true
         fetch_enabled: true
+        push_tags_enabled: false
   roles:
     - agoloncser.git_repos
