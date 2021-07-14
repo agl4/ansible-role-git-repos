@@ -74,6 +74,7 @@ The role `agoloncser.git` is set as dependency for installing git in your enviro
             push_enabled: false
             pull_enabled: true
             fetch_enabled: true
+            push_tags_enabled: false
       roles:
          - agoloncser.git_repos
 
@@ -85,6 +86,7 @@ Since the configuration dictionary looks a little overwhelming at first, it need
           push_enabled: false
           pull_enabled: true
           fetch_enabled: true
+          push_tags_enabled: false
           config:
             - name: user.name
               value: Attila GOLONCSER123
