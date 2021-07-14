@@ -10,7 +10,8 @@
   with_items: "{{ git_repos }}"
 
 - name: fetch repos
-  shell: "git fetch {{ item.fetch_args | default(git_fetch_args) }}"
+  command: >-
+    git fetch {{ item.fetch_args | default(git_fetch_args) }}
   args:
     chdir: "{{ item.path }}"
   with_items: "{{ git_repos | selectattr('fetch_enabled') }}"
@@ -19,7 +20,8 @@
     - skip_ansible_lint
 
 - name: git pull
-  shell: "git pull"
+  command: >-
+    git pull
   args:
     chdir: "{{ item.path }}"
   register: gitpull
@@ -29,7 +31,8 @@
     - skip_ansible_lint
 
 - name: git push
-  shell: "git push {{ item.push_args | default(git_push_args) }}"
+  command: >-
+    git push {{ item.push_args | default(git_push_args) }}
   args:
     chdir: "{{ item.path }}"
   register: gitpush
@@ -39,7 +42,8 @@
     - skip_ansible_lint
 
 - name: git push tags
-  shell: "git push --tags"
+  command: >-
+    git push --tags
   args:
     chdir: "{{ item.path }}"
   register: gitpush_tags
