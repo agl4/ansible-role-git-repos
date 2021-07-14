@@ -19,6 +19,7 @@ This is a sample variable structure used by this role:
         path: ~/src/github.com/agoloncser/ansible-role-git-repos.git
         version: master
         push_enabled: false
+        push_tags_enabled: false
         pull_enabled: true
         fetch_enabled: true
         config:
@@ -46,6 +47,10 @@ The git version of the repository to check out. Can be a branch, a tag, commit i
 ### `git_repos.item.push_enabled`
 
 The role is enabled to push this repo back to `origin`.
+
+### `git_repos.item.push_tags_enabled`
+
+The role is enabled to push tags on this repo back to `origin`.
 
 ### `git_repos.item.pull_enabled`
 

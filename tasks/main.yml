@@ -44,7 +44,7 @@
     chdir: "{{ item.path }}"
   register: gitpush_tags
   changed_when: "'Everything up-to-date' not in gitpush_tags.stderr"
-  with_items: "{{ git_repos | selectattr('push_enabled') }}"
+  with_items: "{{ git_repos | selectattr('push_tags_enabled') }}"
   tags:
     - skip_ansible_lint
 
