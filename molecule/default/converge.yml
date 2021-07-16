@@ -7,9 +7,9 @@
         path: ~/src/github.com/agoloncser/set-options.git
         version: master
         push_enabled: false
+        push_tags_enabled: false
         pull_enabled: true
         fetch_enabled: true
-        push_tags_enabled: true
         config:
           - name: user.name
             value: Attila GOLONCSER123
