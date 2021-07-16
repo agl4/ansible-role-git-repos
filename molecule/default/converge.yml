@@ -18,8 +18,8 @@
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/use-defaults.git
         push_enabled: false
+        push_tags_enabled: false
         pull_enabled: true
         fetch_enabled: true
-        push_tags_enabled: false
   roles:
     - agoloncser.git_repos
