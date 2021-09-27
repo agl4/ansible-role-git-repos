@@ -62,7 +62,7 @@ The role is enabled to fetch this repo from `origin`.
 
 ## Dependencies
 
-The role `agoloncser.git` is set as dependency for installing git in your environment, which is not done in this role for being able to run it at any time without escalated privileges.
+Git should be installed when using this role.
 
 ## Example Playbook
 

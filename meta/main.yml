@@ -21,5 +21,3 @@ galaxy_info:
     - name: EL
       versions:
         - all
-dependencies:
-  - agoloncser.git
