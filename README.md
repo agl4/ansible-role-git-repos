@@ -1,6 +1,5 @@
 # Git-repos
 
-[![Generate tag](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/bump.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/bump.yml)
 [![Lint Code Base](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/linter.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/linter.yml)
 [![Molecule testing](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/ci.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/ci.yml)
 
