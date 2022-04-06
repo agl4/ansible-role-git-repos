@@ -1,6 +1,6 @@
 ---
 - name: clone repos
-  git:
+  ansible.builtin.git:
     repo: "{{ item.url }}"
     dest: "{{ item.path }}"
     accept_hostkey: true
@@ -10,7 +10,7 @@
   with_items: "{{ git_repos }}"
 
 - name: fetch repos
-  command: >-
+  ansible.builtin.command: >-
     git fetch {{ item.fetch_args | default(git_fetch_args) }}
   args:
     chdir: "{{ item.path }}"
@@ -20,7 +20,7 @@
     - skip_ansible_lint
 
 - name: git pull
-  command: >-
+  ansible.builtin.command: >-
     git pull
   args:
     chdir: "{{ item.path }}"
@@ -31,7 +31,7 @@
     - skip_ansible_lint
 
 - name: git push
-  command: >-
+  ansible.builtin.command: >-
     git push {{ item.push_args | default(git_push_args) }}
   args:
     chdir: "{{ item.path }}"
@@ -42,7 +42,7 @@
     - skip_ansible_lint
 
 - name: git push tags
-  command: >-
+  ansible.builtin.command: >-
     git push --tags
   args:
     chdir: "{{ item.path }}"
@@ -53,7 +53,7 @@
     - skip_ansible_lint
 
 - name: repo git config
-  git_config:
+  community.general.git_config:
     scope: local
     repo: "{{ item.0.path }}"
     state: "{{ item.1.state | default('present') }}"

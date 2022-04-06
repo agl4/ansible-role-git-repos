@@ -17,7 +17,6 @@ jobs:
           - agoloncser/docker-ansible-fedora34
           - agoloncser/docker-ansible-fedora35
           - agoloncser/docker-ansible-ubuntu2004
-          - agoloncser/docker-ansible-ubuntu2010
           - agoloncser/docker-ansible-ubuntu2104
           - agoloncser/docker-ansible-ubuntu2110
 
@@ -57,6 +56,6 @@ jobs:
       - name: Import to Galaxy
         if: ${{ github.ref == 'refs/heads/master' }}
 
-        uses: robertdebock/galaxy-action@1.1.0
+        uses: robertdebock/galaxy-action@1.2.0
         with:
           galaxy_api_key: ${{ secrets.galaxy_api_key }}

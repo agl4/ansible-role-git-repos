@@ -3,5 +3,5 @@
   hosts: all
   tasks:
     - name: nothing
-      debug:
+      ansible.builtin.debug:
         msg: "pass"
