@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/agoloncser/ansible-role-git-repos/compare/v4.0.1...v5.0.0) (2022-04-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* FQCN builtins
+
+### Features
+
+* FQCN builtins ([28e8619](https://github.com/agoloncser/ansible-role-git-repos/commit/28e8619a2d04099a3978892ddae370e7af447a5d))
+
 ### [4.0.1](https://www.github.com/agoloncser/ansible-role-git-repos/compare/v4.0.0...v4.0.1) (2021-10-12)
 
 
