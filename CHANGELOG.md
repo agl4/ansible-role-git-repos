@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.0.1](https://github.com/agoloncser/ansible-role-git-repos/compare/v5.0.0...v5.0.1) (2022-10-26)
+
+
+### Bug Fixes
+
+* Add collection dependency ([dcf591b](https://github.com/agoloncser/ansible-role-git-repos/commit/dcf591b1e40f035d42fa6384ff3e5a160f3f86f6))
+
 ## [5.0.0](https://github.com/agoloncser/ansible-role-git-repos/compare/v4.0.1...v5.0.0) (2022-04-06)
 
 
