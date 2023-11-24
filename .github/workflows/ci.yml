@@ -12,10 +12,12 @@ jobs:
         python_version: ["3.10"]
         experimental: [false]
         molecule_image:
-          - agoloncser/docker-ansible-fedora36
-          - agoloncser/docker-ansible-fedora37
+          - agoloncser/docker-ansible-fedora38
+          - agoloncser/docker-ansible-fedora39
+          - agoloncser/docker-ansible-fedora40
           - agoloncser/docker-ansible-ubuntu2004
           - agoloncser/docker-ansible-ubuntu2204
+          - agoloncser/docker-ansible-ubuntu2304
 
     steps:
       - name: Checkout
