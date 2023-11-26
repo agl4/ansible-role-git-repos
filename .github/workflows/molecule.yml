@@ -9,15 +9,11 @@ jobs:
     continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
-        python_version: ["3.10"]
+        python_version: ["3.12"]
         experimental: [false]
         molecule_image:
-          - agoloncser/docker-ansible-fedora38
-          - agoloncser/docker-ansible-fedora39
-          - agoloncser/docker-ansible-fedora40
-          - agoloncser/docker-ansible-ubuntu2004
-          - agoloncser/docker-ansible-ubuntu2204
-          - agoloncser/docker-ansible-ubuntu2304
+          - ghcr.io/agoloncser/docker-molecule-fedora:39
+          - ghcr.io/agoloncser/docker-molecule-ubuntu:22.04
 
     steps:
       - name: Checkout
@@ -36,7 +32,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.local/share/virtualenvs
-          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock', '**/tasks/main.yml') }}
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
 
       - name: Install dependencies
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
@@ -44,6 +40,6 @@ jobs:
           pipenv install --deploy --dev
 
       - name: Molecule test
-        run: pipenv run molecule --debug test
+        run: pipenv run molecule test
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
