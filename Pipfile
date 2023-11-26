@@ -1,17 +1,13 @@
 [[source]]
-url = "https://pypi.python.org/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
-name = "PyPi"
+name = "pypi"
+
+[packages]
+ansible-core = "==2.16.0"
+molecule-docker = "==2.1.0"
 
 [dev-packages]
 
-[packages]
-ansible = "2.11"
-ansible-lint = "*"
-molecule-docker = "*"
-molecule = "*"
-yamllint = "*"
-typing-extensions = "*"
-importlib_resources = "*"
-python_version = "3.10"
-zipp = "*"
+[requires]
+python_version = "3.12"
