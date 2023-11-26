@@ -21,3 +21,4 @@ jobs:
       - uses: gofrolist/molecule-action@v2
         env:
           MOLECULE_IMAGE: ${{ matrix.molecule_image }}
+          ANSIBLE_FORCE_COLOR: "1"
