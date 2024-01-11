@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3c6c7e902d40beb3efa9ce2056903b2dc7d35f5ef81104a93ff1fc092b5701cb"
+            "sha256": "bb30daef64f411b7313b879b400d123d2489503e3f3f7f59cbe8ca68ff6fb35e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,12 +26,12 @@
         },
         "ansible-core": {
             "hashes": [
-                "sha256:4fd1b3c86237507c67113f6770d2470f87477cd88244938d100a2d0fc37bf986",
-                "sha256:8fc972ba6ba2161ecbde8166c0042080726c754f69ecb3ccd8c6636c98dc1c7e"
+                "sha256:494f002edcb17b02baef661ff27b8c9c750a534bdc0537ab29dc02e680817d92",
+                "sha256:e4ab559e7e525b1c6f99084fca873bb014775d5ecbe845b7c07b8e9d6c9c048b"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.10'",
-            "version": "==2.16.1"
+            "version": "==2.16.2"
         },
         "attrs": {
             "hashes": [
@@ -255,6 +255,14 @@
             "index": "pypi",
             "markers": "python_version >= '3.7'",
             "version": "==41.0.7"
+        },
+        "distro": {
+            "hashes": [
+                "sha256:02e111d1dc6a50abb8eed6bf31c3e48ed8b0830d1ea2a1b78c61765c2513fdd8",
+                "sha256:99522ca3e365cac527b44bde033f64c6945d90eb9f769703caaec52b09bbd3ff"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==1.8.0"
         },
         "docker": {
             "hashes": [
@@ -625,6 +633,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==0.13.2"
+        },
+        "selinux": {
+            "hashes": [
+                "sha256:2a88b337ac46ad0f06f557b2806c3df62421972f766673dd8bf26732fb75a9ea",
+                "sha256:ecf7add45c939e9dda682c390a2cd0a845c94a4793a2cce9e8870d4ee9501f99"
+            ],
+            "markers": "sys_platform == 'linux'",
+            "version": "==0.3.0"
         },
         "subprocess-tee": {
             "hashes": [
