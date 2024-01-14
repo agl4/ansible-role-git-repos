@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.0.0](https://github.com/agoloncser/ansible-role-git-repos/compare/v5.0.1...v6.0.0) (2024-01-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Change default branch to 'main'
+
+### Features
+
+* Change default branch to 'main' ([e4ba541](https://github.com/agoloncser/ansible-role-git-repos/commit/e4ba54164a14acfa2414a70d418dc784d4fa158f))
+
 ## [5.0.1](https://github.com/agoloncser/ansible-role-git-repos/compare/v5.0.0...v5.0.1) (2022-10-26)
 
 
