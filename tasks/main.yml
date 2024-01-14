@@ -4,7 +4,7 @@
     repo: "{{ item.url }}"
     dest: "{{ item.path }}"
     accept_hostkey: true
-    version: "{{ item.version | default('master') }}"
+    version: "{{ item.version | default('main') }}"
     update: "no"
     track_submodules: "{{ item.track_submodules | default(true) }}"
   with_items: "{{ git_repos }}"

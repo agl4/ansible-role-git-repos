@@ -5,7 +5,7 @@
     git_repos:
       - url: https://github.com/agoloncser/ansible-role-git-repos.git
         path: ~/src/github.com/agoloncser/set-options.git
-        version: master
+        version: main
         push_enabled: false
         push_tags_enabled: false
         pull_enabled: true
