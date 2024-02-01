@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "00cdd51484c7e0837a5d8ed751074b8e5f0e09ecd06eb764f42cbe77d678b8d0"
+            "sha256": "3407d7a7149a8c0bf8741451325b27ca57ef34229e5983233a8efaec764c897f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -264,6 +264,14 @@
             "index": "pypi",
             "markers": "python_version >= '3.7'",
             "version": "==42.0.1"
+        },
+        "distro": {
+            "hashes": [
+                "sha256:2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed",
+                "sha256:7bffd925d65168f85027d8da9af6bddab658135b840670a223589bc0c8ef02b2"
+            ],
+            "markers": "python_version >= '3.6'",
+            "version": "==1.9.0"
         },
         "docker": {
             "hashes": [
@@ -637,6 +645,14 @@
             "markers": "python_version >= '3.8'",
             "version": "==0.17.1"
         },
+        "selinux": {
+            "hashes": [
+                "sha256:2a88b337ac46ad0f06f557b2806c3df62421972f766673dd8bf26732fb75a9ea",
+                "sha256:ecf7add45c939e9dda682c390a2cd0a845c94a4793a2cce9e8870d4ee9501f99"
+            ],
+            "markers": "sys_platform == 'linux'",
+            "version": "==0.3.0"
+        },
         "subprocess-tee": {
             "hashes": [
                 "sha256:b3c124993f8b88d1eb1c2fde0bc2069787eac720ba88771cba17e8c93324825d",
@@ -647,12 +663,12 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:55901e917a5896a349ff771be919f8bd99aff50b79fe58fec595eb37bbc56bb3",
-                "sha256:df7aa8afb0148fa78488e7899b2c59b5f4ffcfa82e6c54ccb9dd37c1d7b52d54"
+                "sha256:051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20",
+                "sha256:ce3711610ddce217e6d113a2732fafad960a03fd0318c91faa79481e35c11224"
             ],
             "index": "pypi",
             "markers": "python_version >= '3.8'",
-            "version": "==2.1.0"
+            "version": "==2.2.0"
         },
         "wcmatch": {
             "hashes": [
