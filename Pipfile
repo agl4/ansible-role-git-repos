@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-ansible-core = "==2.16.2"
+ansible-core = "==2.16.3"
 molecule-docker = "==2.1.0"
 
 # Dependabot alers
