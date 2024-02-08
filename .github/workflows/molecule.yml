@@ -6,11 +6,8 @@ name: Molecule
 jobs:
   molecule:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
     strategy:
       matrix:
-        python_version: ["3.12"]
-        experimental: [false]
         molecule_image:
           - ghcr.io/agoloncser/docker-molecule-fedora:39
           - ghcr.io/agoloncser/docker-molecule-fedora:40
@@ -18,9 +15,6 @@ jobs:
           - ghcr.io/agoloncser/docker-molecule-ubuntu:22.04
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - uses: gofrolist/molecule-action@v2
+      - uses: agl4/actions/ansible-role/.github/workflows/molecule.yml@main
         env:
-          MOLECULE_IMAGE: ${{ matrix.molecule_image }}
-          ANSIBLE_FORCE_COLOR: "1"
+          molecule_image: ${{ matrix.molecule_image }}
