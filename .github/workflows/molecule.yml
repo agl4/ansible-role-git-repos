@@ -5,13 +5,13 @@ name: Molecule
   pull_request: {}
 jobs:
   molecule:
-    # strategy:
-    #   matrix:
-    #     molecule_image:
-    #       - ghcr.io/agoloncser/docker-molecule-fedora:39
-    #       - ghcr.io/agoloncser/docker-molecule-fedora:40
-    #       - ghcr.io/agoloncser/docker-molecule-ubuntu:20.04
-    #       - ghcr.io/agoloncser/docker-molecule-ubuntu:22.04
+    strategy:
+      matrix:
+        molecule_image:
+          - ghcr.io/agoloncser/docker-molecule-fedora:39
+          - ghcr.io/agoloncser/docker-molecule-fedora:40
+          - ghcr.io/agoloncser/docker-molecule-ubuntu:20.04
+          - ghcr.io/agoloncser/docker-molecule-ubuntu:22.04
 
     uses:
       agl4/actions/.github/workflows/molecule.yml@main
