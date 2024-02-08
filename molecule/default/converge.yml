@@ -3,8 +3,8 @@
   hosts: all
   vars:
     git_repos:
-      - url: https://github.com/agoloncser/ansible-role-git-repos.git
-        path: ~/src/github.com/agoloncser/set-options.git
+      - url: https://github.com/agl4/ansible-role-git-repos.git
+        path: ~/src/github.com/agl4/set-options.git
         version: main
         push_enabled: false
         push_tags_enabled: false
@@ -14,12 +14,12 @@
           - name: user.name
             value: Attila GOLONCSER123
           - name: user.email
-            value: agoloncser123@example.com
-      - url: https://github.com/agoloncser/ansible-role-git-repos.git
+            value: agl4123@example.com
+      - url: https://github.com/agl4/ansible-role-git-repos.git
         path: ~/src/github.com/use-defaults.git
         push_enabled: false
         push_tags_enabled: false
         pull_enabled: true
         fetch_enabled: true
   roles:
-    - agoloncser.git_repos
+    - agl4.git_repos
