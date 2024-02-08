@@ -12,10 +12,10 @@ jobs:
         python_version: ["3.12"]
         experimental: [false]
         molecule_image:
-          - ghcr.io/agoloncser/docker-molecule-fedora:39
-          - ghcr.io/agoloncser/docker-molecule-fedora:40
-          - ghcr.io/agoloncser/docker-molecule-ubuntu:20.04
-          - ghcr.io/agoloncser/docker-molecule-ubuntu:22.04
+          - ghcr.io/agl4/docker-molecule-fedora:39
+          - ghcr.io/agl4/docker-molecule-fedora:40
+          - ghcr.io/agl4/docker-molecule-ubuntu:20.04
+          - ghcr.io/agl4/docker-molecule-ubuntu:22.04
 
     steps:
       - name: Checkout
