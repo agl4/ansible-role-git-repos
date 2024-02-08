@@ -1,7 +1,7 @@
 # Git-repos
 
-[![Lint Code Base](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/linter.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/linter.yml)
-[![Molecule testing](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/ci.yml/badge.svg)](https://github.com/agoloncser/ansible-role-git-repos/actions/workflows/ci.yml)
+[![Lint Code Base](https://github.com/agl4/ansible-role-git-repos/actions/workflows/linter.yml/badge.svg)](https://github.com/agl4/ansible-role-git-repos/actions/workflows/linter.yml)
+[![Molecule testing](https://github.com/agl4/ansible-role-git-repos/actions/workflows/ci.yml/badge.svg)](https://github.com/agl4/ansible-role-git-repos/actions/workflows/ci.yml)
 
 Ansible role to checkout out and setting up git repositories on your
 system.
@@ -16,8 +16,8 @@ This is a sample variable structure used by this role:
 
 ```yaml
   git_repos:
-    - url: https://github.com/agoloncser/ansible-role-git-repos.git
-      path: ~/src/github.com/agoloncser/ansible-role-git-repos.git
+    - url: https://github.com/agl4/ansible-role-git-repos.git
+      path: ~/src/github.com/agl4/ansible-role-git-repos.git
       version: main
       push_enabled: false
       push_tags_enabled: false
@@ -27,7 +27,7 @@ This is a sample variable structure used by this role:
         - name: user.name
           value: Attila GOLONCSER123
         - name: user.email
-          value: agoloncser123@example.com
+          value: agl4123@example.com
 ```
 
 ### `git_repos.item.url`
@@ -75,14 +75,14 @@ Git should be installed when using this role.
   - hosts: localhost
     vars:
       git_repos:
-        - url: https://github.com/agoloncser/ansible-role-git.git
-          path: ~/src/github.com/agoloncser/ansible-role-git.git
+        - url: https://github.com/agl4/ansible-role-git.git
+          path: ~/src/github.com/agl4/ansible-role-git.git
           push_enabled: false
           pull_enabled: true
           fetch_enabled: true
           push_tags_enabled: false
     roles:
-       - agoloncser.git_repos
+       - agl4.git_repos
 ```
 
 ## Tips
@@ -102,7 +102,7 @@ references inside your inventory. This solution totally works:
       - name: user.name
         value: Attila GOLONCSER123
       - name: user.email
-        value: agoloncser123@example.com
+        value: agl4123@example.com
 
   git_repos:
     - url: https://github.com/megacorp/my-repo-1.git
@@ -128,4 +128,4 @@ BSD
 
 ## Author Information
 
-[@agoloncser](https://github.com/agoloncser)
+[@agl4](https://github.com/agl4)
