@@ -2,7 +2,7 @@
 galaxy_info:
   role_name: git_repos
   description: Role for setting up git repositories.
-  author: agoloncser
+  author: agl4
   license: BSD License
   min_ansible_version: 2.9
   platforms:
