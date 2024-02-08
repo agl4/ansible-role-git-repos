@@ -47,7 +47,7 @@ repository locally with `git config`. Useful for setting up
 ### `git_repos.item.version`
 
 The git version of the repository to check out. Can be a branch, a
-tag, commit id. Default: `main`.
+tag, commit ID. Default: `main`.
 
 ### `git_repos.item.push_enabled`
 
