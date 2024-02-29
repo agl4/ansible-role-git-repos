@@ -51,19 +51,19 @@ tag, commit ID. Default: `main`.
 
 ### `git_repos.item.push_enabled`
 
-The role is enabled to push this repo back to `origin`.
+The role is enabled to push this repository back to `origin`.
 
 ### `git_repos.item.push_tags_enabled`
 
-The role is enabled to push tags on this repo back to `origin`.
+The role is enabled to push tags on this repository back to `origin`.
 
 ### `git_repos.item.pull_enabled`
 
-The role is enabled to pull this repo from `origin`.
+The role is enabled to pull this repository from `origin`.
 
 ### `git_repos.item.fetch_enabled`
 
-The role is enabled to fetch this repo from `origin`.
+The role is enabled to fetch this repository from `origin`.
 
 ## Dependencies
 
